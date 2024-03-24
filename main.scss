@@ -6,7 +6,7 @@ html, body {
 
 body {
     height: 700lvh;
-    width: 100dvw;
+    width: 100lvh;
     display: flex;
     flex-direction: column;
 
@@ -19,7 +19,7 @@ body {
 
 header #visible {
     position: fixed;
-    width: 100dvw;
+    width: 100lvh;
     top: 0;
     left: 0;
     z-index: -1;
@@ -28,9 +28,9 @@ header #visible {
 h3 {
     width: 100%;
     text-align: center;
-    margin: 7.8dvw 0 0 0; padding: 0;
+    margin: 7.8lvh 0 0 0; padding: 0;
     font-family: "adorn-smooth-condensed-sans", sans-serif;
-    font-size: 5.5dvw;
+    font-size: 5.5lvh;
     color: #faf8f7;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
@@ -38,20 +38,20 @@ h3 {
 h1 {
     width: 100%;
     text-align: center;
-    margin: 2.6dvw 0 5.2dvw 0; padding: 0;
-    font-size: 9dvw;
+    margin: 2.6lvh 0 5.2lvh 0; padding: 0;
+    font-size: 9lvh;
     font-weight: 800;
     color: #faf8f7;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 div.landing {
-    padding: 5.2dvw;
+    padding: 5.2lvh;
     display: flex;
     flex-direction: column;
-    gap: 3dvw;
+    gap: 3lvh;
     flex: 1;
-    border-radius: 5.2dvw 5.2dvw 0 0;
+    border-radius: 5.2lvh 5.2lvh 0 0;
     background-color: #faf8f7;
     box-shadow: rgba(0, 0, 0, 0.15) 0px -15px 25px, rgba(0, 0, 0, 0.05) 0px -5px 10px;
 
@@ -68,18 +68,18 @@ div.landing {
 
     div {
         display: flex;
-        gap: 3dvw;
+        gap: 3lvh;
         flex: 1;
 
         .landing-tile {
-            border-radius: 3.9dvw;
+            border-radius: 3.9lvh;
             
             flex: 1;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
             transition: 200ms;
 
             &:hover {
-                transform: translateY(-3.9dvw);
+                transform: translateY(-3.9lvh);
                 transition: 200ms;
             }
 
@@ -88,17 +88,17 @@ div.landing {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                margin-bottom: 1.82dvw;
-                border-radius: 3.64dvw;
+                margin-bottom: 1.82lvh;
+                border-radius: 3.64lvh;
                 box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px 0px inset;
 
                 p {
-                    font-size: clamp(4rem, 12dvw, 6.5rem);
+                    font-size: clamp(4rem, 12lvh, 6.5rem);
                     margin: 0;
                     padding: auto;
                 }
                 h2 {
-                    font-size: clamp(1.3rem, 4.2dvw, 2.2rem);
+                    font-size: clamp(1.3rem, 4.2lvh, 2.2rem);
                     height: 0;
                     margin: 0;
                     font-weight: 800;
