@@ -5,7 +5,7 @@ html, body {
 }
 
 body {
-    height: 700dvh;
+    height: 700lvh;
     width: 100dvw;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ body {
     background-color: #211c27;
 
     > div:not(.landing) {
-        height: 100dvh;
+        height: 100lvh;
     }
 }
 
