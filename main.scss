@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -106,58 +110,176 @@ div.landing {
             }
 
             &#tile-1 {
-                background-color: #ac8869;
-                .tile-container {background-color: #d8c1a4; color: #392420;}
+                background-color: #b18864;
+                .tile-container {background-color: #ebcaa1; color: #392420;}
             }
 
             &#tile-2 {
-                background-color: #698cac;
-                .tile-container {background-color: #a4bfd8; color: #202b39;}
+                background-color: #5e87ad;
+                .tile-container {background-color: #a4caee; color: #202b39;}
             }
 
             &#tile-3 {
-                background-color: #8869ac;
-                .tile-container {background-color: #bca4d8; color: #2e2039;}
+                background-color: #855fb1;
+                .tile-container {background-color: #c7a4ee; color: #2e2039;}
             }
 
             &#tile-4 {
-                background-color: #69a2ac;
-                .tile-container {background-color: #a4d5d8; color: #203639;}
+                background-color: #5fa3af;
+                .tile-container {background-color: #a7e2e6; color: #203639;}
             }
 
             &#tile-5 {
-                background-color: #ac6969;
-                .tile-container {background-color: #d8a4a4; color: #392020;}
+                background-color: #b36262;
+                .tile-container {background-color: #eea7a7; color: #392020;}
             }
 
             &#tile-6 {
-                background-color: #71ac69;
-                .tile-container {background-color: #a8d8a4; color: #223920;}
+                background-color: #69ad60;
+                .tile-container {background-color: #b3e9ae; color: #223920;}
             }
         }
     }
 }
 
+.card {
+    background-color: #faf8f7;
+    display: flex;
+    flex-direction: row;
+    padding: 3lvw;
+    border-radius: 3.9lvw;
+}
+
+.image-container {
+    display: flex;
+    max-width: 100lvw;
+    border-radius: 3.64lvw;
+    overflow: hidden;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    transform: scale(1.05);
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    gap: 1.8lvw;
+
+    > .tag {
+        padding: 0.6lvw 2.4lvw 1.1lvw 2.4lvw;
+        line-height: normal;
+        margin: 0;
+        background-color: #b18864;
+        color: #faf8f7;
+        text-align: center;
+        font-size: larger;
+        font-weight: 600;
+        border-radius: 100lvw;
+    }
+}
+
+$animationSpeed: 15s;
+
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-238.6lvw)}
+}
+
+
+// Styling
+.slider {
+	margin: auto;
+	position: relative;
+	width: 100lvw;
+	
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.tags {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		width: 370lvw;
+	}
+}
+
 div#whoami {
-    background-color: #d8c1a4;
+    background-color: #ebcaa1;
+
+    > h1 {
+        text-shadow: none;
+        color: #202b39;
+        text-align: end;
+        > strong {
+            color: #faf8f7;
+        }
+    }
+
+    > .card {
+        width: 70lvw;
+
+        > .image-container {
+            height: 100%;
+        }
+
+        > div:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            flex: 3;
+
+            > h4 {
+                padding: 0; margin: 0; padding-left: 3lvw; padding-bottom: 3lvw;
+                font-size: clamp(1.3rem, 4.2lvw, 2.2rem);
+                color: #392420;
+                font-weight: 800;
+            }
+
+            > p {
+                padding: 0; margin: 0; padding-left: 3lvw;
+                color: #392420;
+                font-weight: 700
+            }
+        }
+    }
 }
 
 div#aboutme {
-    background-color: #a4bfd8;
+    background-color: #a4caee;
 }
 
 div#uiux {
-    background-color: #bca4d8;
+    background-color: #c7a4ee;
 }
 
 div#photography {
-    background-color: #a4d5d8;
+    background-color: #a7e2e6;
 }
 
 div#music {
-    background-color: #d8a4a4;
+    background-color: #eea7a7;
 }
 
 div#contactme {
-    background-color: #a8d8a4;
+    background-color: #b3e9ae;
 }
