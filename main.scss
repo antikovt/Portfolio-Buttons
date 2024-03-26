@@ -1,3 +1,7 @@
+:root {
+    --anim-offset: 1px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -79,8 +83,9 @@ div.landing {
             border-radius: 3.9lvw;
             
             flex: 1;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
             transition: 200ms;
+            cursor: pointer;
 
             &:hover {
                 transform: translateY(-3.9lvw);
@@ -94,12 +99,12 @@ div.landing {
                 align-items: center;
                 margin-bottom: 1.82lvw;
                 border-radius: 3.64lvw;
-                box-shadow: rgba(255, 255, 255, 0.06) 0px 2px 4px 0px inset;
+                box-shadow: rgba(255, 255, 255, 0.06) 0 2px 4px 0 inset;
 
                 p {
                     font-size: clamp(4rem, 12lvw, 6.5rem);
                     margin: 0;
-                    padding: auto;
+                    padding: 0;
                 }
                 h2 {
                     font-size: clamp(1.3rem, 4.2lvw, 2.2rem);
@@ -146,8 +151,8 @@ div.landing {
     background-color: #faf8f7;
     display: flex;
     flex-direction: row;
-    padding: 3lvw;
-    border-radius: 3.9lvw;
+    padding: 3.5lvw;
+    border-radius: 5.8lvw;
 }
 
 .image-container {
@@ -158,11 +163,11 @@ div.landing {
     flex: 2;
     align-items: center;
     justify-content: center;
-}
 
-img {
-    width: 100%;
-    transform: scale(1.05);
+    > img {
+        width: 100%;
+        transform: scale(1.05);
+    }
 }
 
 .tags {
@@ -180,6 +185,7 @@ img {
         font-size: larger;
         font-weight: 600;
         border-radius: 100lvw;
+        white-space: nowrap;
     }
 }
 
@@ -188,15 +194,24 @@ $animationSpeed: 15s;
 // Animation
 @keyframes scroll {
 	0% { transform: translateX(0); }
-	100% { transform: translateX(-238.6lvw)}
+	100% { transform: translateX(var(--anim-offset))}
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    10% { transform: translateY(20%); }
+    20% { transform: translateY(0); }
+    30% { transform: translateY(20%); }
+    40% { transform: translateY(0lvw); }
 }
 
 
 // Styling
 .slider {
-	margin: auto;
+
 	position: relative;
 	width: 100lvw;
+    overflow: hidden;
 	
 	&::before,
 	&::after {
@@ -220,27 +235,50 @@ $animationSpeed: 15s;
 	.tags {
 		animation: scroll $animationSpeed linear infinite;
 		display: flex;
-		width: 370lvw;
+		width: fit-content;
 	}
+}
+
+.slider.first {
+    margin-top: 5lvw;
+    margin-bottom: 5lvw;
+    > .tags {
+        animation: scroll calc($animationSpeed - 7s) linear infinite;
+    }
 }
 
 div#whoami {
     background-color: #ebcaa1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
 
     > h1 {
         text-shadow: none;
         color: #202b39;
         text-align: end;
+        padding-top: 5%;
+        z-index: 2;
         > strong {
             color: #faf8f7;
         }
     }
 
     > .card {
-        width: 70lvw;
+        width: 75lvw;
+        transform: translate(-5lvw, 10lvh);
+        margin-bottom: 3lvw;
 
         > .image-container {
             height: 100%;
+            background-image: url("Portrait.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            > img {
+                visibility: hidden;
+            }
         }
 
         > div:nth-child(2) {
@@ -249,18 +287,48 @@ div#whoami {
             flex: 3;
 
             > h4 {
-                padding: 0; margin: 0; padding-left: 3lvw; padding-bottom: 3lvw;
-                font-size: clamp(1.3rem, 4.2lvw, 2.2rem);
+                margin: -2% 0 0;
+                padding: 0 0 1lvw 3lvw;
+                font-size: clamp(1.4rem, 4.25lvw, 2.3rem);
                 color: #392420;
                 font-weight: 800;
             }
 
             > p {
-                padding: 0; margin: 0; padding-left: 3lvw;
+                margin: 0;
+                padding: 0 0 0 3lvw;
                 color: #392420;
-                font-weight: 700
+                font-weight: 700;
+                font-size: small;
             }
         }
+    }
+}
+
+div#whoami-footer {
+    width: 100%;
+    color: #b18864;
+    margin-top: auto;
+
+    > p {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        font-weight: 600;
+    }
+}
+
+div.arrow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > img {
+        width: 10lvw;
+        height: 10lvw;
+        padding-bottom: 5lvw; padding-top: -15%;
+        animation: jump 5s ease-in-out infinite;
     }
 }
 
