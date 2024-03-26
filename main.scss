@@ -23,7 +23,7 @@ html, body {
 body {
     height: 700lvh;
     width: 100lvw;
-    overflow-x: clip;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 
@@ -274,6 +274,7 @@ div#whoami {
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    overflow: hidden;
 
     > div.content {
         height: 35lvh;

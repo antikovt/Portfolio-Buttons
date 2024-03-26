@@ -15,7 +15,7 @@ html, body {
 body {
   height: 700lvh;
   width: 100lvw;
-  overflow-x: clip;
+  overflow-x: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,6 +378,7 @@ div#whoami {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+  overflow: hidden;
 }
 div#whoami > div.content {
   height: 35lvh;
