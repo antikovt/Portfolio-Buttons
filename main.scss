@@ -1,3 +1,11 @@
+$brown-0: #fdfaf7; $brown-1: #ebcaa1; $brown-2: #b18864; $brown-3: #392420;
+$blue-0: #f7fafd; $blue-1: #a4caee; $blue-2: #5e87ad; $blue-3: #202b39;
+$purple-0: #fbf7ff; $purple-1: #c7a4ee; $purple-2: #855fb1; $purple-3: #2e2039;
+$cyan-0: #f2fbfc; $cyan-1: #a7e2e6; $cyan-2: #5fa3af; $cyan-3: #203639;
+$red-0: #fdf4f4; $red-1: #eea7a7; $red-2: #b36262; $red-3: #392020;
+$green-0: #f4fdf3; $green-1: #b3e9ae; $green-2: #69ad60; $green-3: #223920;
+$card-shadow: rgba(0, 0, 0, 0.25) 20px 25px 50px -12px;
+
 :root {
     --anim-offset: 1px;
 }
@@ -15,6 +23,7 @@ html, body {
 body {
     height: 700lvh;
     width: 100lvw;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 
@@ -39,7 +48,7 @@ h3 {
     margin: 7.8lvw 0 0 0; padding: 0;
     font-family: "adorn-smooth-condensed-sans", sans-serif;
     font-size: 5.5lvw;
-    color: #faf8f7;
+    color: $brown-0;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
@@ -49,7 +58,7 @@ h1 {
     margin: 2.6lvw 0 5.2lvw 0; padding: 0;
     font-size: 9lvw;
     font-weight: 800;
-    color: #faf8f7;
+    color: $brown-0;
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
@@ -60,7 +69,7 @@ div.landing {
     gap: 3lvw;
     flex: 1;
     border-radius: 5.2lvw 5.2lvw 0 0;
-    background-color: #faf8f7;
+    background-color: $brown-0;
     box-shadow: rgba(0, 0, 0, 0.15) 0px -15px 25px, rgba(0, 0, 0, 0.05) 0px -5px 10px;
 
 
@@ -78,10 +87,12 @@ div.landing {
         display: flex;
         gap: 3lvw;
         flex: 1;
+        justify-content: center;
 
         .landing-tile {
             border-radius: 3.9lvw;
-            
+            max-width: 25lvh;
+
             flex: 1;
             box-shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
             transition: 200ms;
@@ -99,6 +110,7 @@ div.landing {
                 align-items: center;
                 margin-bottom: 1.82lvw;
                 border-radius: 3.64lvw;
+                overflow: hidden;
                 box-shadow: rgba(255, 255, 255, 0.06) 0 2px 4px 0 inset;
 
                 p {
@@ -115,49 +127,57 @@ div.landing {
             }
 
             &#tile-1 {
-                background-color: #b18864;
-                .tile-container {background-color: #ebcaa1; color: #392420;}
+                background-color: $brown-2;
+                .tile-container {background-color: $brown-1; color: $brown-3;}
             }
 
             &#tile-2 {
-                background-color: #5e87ad;
-                .tile-container {background-color: #a4caee; color: #202b39;}
+                background-color: $blue-2;
+                .tile-container {background-color: $blue-1; color: $blue-3;}
             }
 
             &#tile-3 {
-                background-color: #855fb1;
-                .tile-container {background-color: #c7a4ee; color: #2e2039;}
+                background-color: $purple-2;
+                .tile-container {background-color: $purple-1; color: $purple-3;}
             }
 
             &#tile-4 {
-                background-color: #5fa3af;
-                .tile-container {background-color: #a7e2e6; color: #203639;}
+                background-color: $cyan-2;
+                .tile-container {background-color: $cyan-1; color: $cyan-3;}
             }
 
             &#tile-5 {
-                background-color: #b36262;
-                .tile-container {background-color: #eea7a7; color: #392020;}
+                background-color: $red-2;
+                .tile-container {background-color: $red-1; color: $red-3;}
             }
 
             &#tile-6 {
-                background-color: #69ad60;
-                .tile-container {background-color: #b3e9ae; color: #223920;}
+                background-color: $green-2;
+                .tile-container {background-color: $green-1; color: $green-3;}
             }
         }
     }
 }
 
 .card {
-    background-color: #faf8f7;
+    background-color: $brown-0;
     display: flex;
     flex-direction: row;
-    padding: 3.5lvw;
+    padding: 3lvw;
     border-radius: 5.8lvw;
+    box-shadow: $card-shadow;
+
+    h4 {
+        margin: -2% 0 0;
+        padding: 0 0 1lvw 3lvw;
+        font-size: clamp(1.4rem, 4.25lvw, 2.3rem);
+        color: #392420;
+        font-weight: 800;
+    }
 }
 
 .image-container {
     display: flex;
-    max-width: 100lvw;
     border-radius: 3.64lvw;
     overflow: hidden;
     flex: 2;
@@ -179,8 +199,8 @@ div.landing {
         padding: 0.6lvw 2.4lvw 1.1lvw 2.4lvw;
         line-height: normal;
         margin: 0;
-        background-color: #b18864;
-        color: #faf8f7;
+        background-color: $brown-2;
+        color: $brown-0;
         text-align: center;
         font-size: larger;
         font-weight: 600;
@@ -210,9 +230,10 @@ $animationSpeed: 15s;
 .slider {
 
 	position: relative;
-	width: 100lvw;
+	width: 110lvw;
     overflow: hidden;
-	
+    rotate: 10deg;
+
 	&::before,
 	&::after {
 		content: "";
@@ -220,7 +241,7 @@ $animationSpeed: 15s;
 		width: 200px;
 		z-index: 2;
 	}
-	
+
 	&::after {
 		right: 0;
 		top: 0;
@@ -231,7 +252,7 @@ $animationSpeed: 15s;
 		left: 0;
 		top: 0;
 	}
-	
+
 	.tags {
 		animation: scroll $animationSpeed linear infinite;
 		display: flex;
@@ -254,54 +275,115 @@ div#whoami {
     align-items: center;
     justify-content: start;
 
-    > h1 {
-        text-shadow: none;
-        color: #202b39;
-        text-align: end;
-        padding-top: 5%;
-        z-index: 2;
-        > strong {
-            color: #faf8f7;
+    > div.content {
+        height: 35lvh;
+        width: 100lvw;
+        margin-top: 5lvh;
+        position: relative;
+        flex-shrink: 0;
+
+        > h1 {
+            text-shadow: 5px 10px 25px rgba(0, 0, 0, 0.25);
+            color: #202b39;
+            margin: 0;
+            text-align: end;
+            z-index: 2;
+            position: absolute;
+            bottom: 0;
+
+            > strong {
+                color: $brown-0;
+            }
+        }
+
+        > .card {
+            width: 75lvw;
+            position: absolute;
+            top: 12%; left: 3%;
+            padding: 3.5lvw;
+            max-height: 70%;
+
+            > .image-container {
+                background-image: url("Portrait.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                > img {
+                    visibility: hidden;
+                }
+            }
+
+            > div:nth-child(2) {
+                display: flex;
+                flex-direction: column;
+                flex: 3;
+
+                > p {
+                    margin: 0;
+                    padding: 0 0 0 3lvw;
+                    color: #392420;
+                    font-weight: 700;
+                    font-size: clamp(1rem, 2.25lvw, 1.5rem);
+                }
+            }
         }
     }
 
-    > .card {
-        width: 75lvw;
-        transform: translate(-5lvw, 10lvh);
-        margin-bottom: 3lvw;
-
-        > .image-container {
-            height: 100%;
-            background-image: url("Portrait.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            > img {
-                visibility: hidden;
-            }
-        }
-
-        > div:nth-child(2) {
-            display: flex;
+    > .stack {
+        width: 100lvw;
+        > .card {
             flex-direction: column;
-            flex: 3;
+            flex: 1;
+            padding: 2lvw;
+            border-radius: 5lvw;
+            min-height: 50%;
+            max-height: 80%;
+            justify-content: space-between;
+            aspect-ratio: 3 / 4;
 
-            > h4 {
-                margin: -2% 0 0;
-                padding: 0 0 1lvw 3lvw;
-                font-size: clamp(1.4rem, 4.25lvw, 2.3rem);
-                color: #392420;
-                font-weight: 800;
+            .image-container {
+                aspect-ratio: 4 / 3;
+                flex: initial;
             }
-
-            > p {
+            h4 {
+                padding: 0 0 1.5lvw;
                 margin: 0;
-                padding: 0 0 0 3lvw;
-                color: #392420;
-                font-weight: 700;
-                font-size: small;
+                font-size: clamp(1.1rem, 2.8lvw, 1.7rem);
             }
         }
+        flex: 0.9;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
+
+.card.game {
+    transform: translate(28%, -5%);
+    rotate: -10deg;
+    background-color: $red-0;
+    h4 {
+        color: $red-2;
+    }
+}
+
+.card.photo {
+    transform: translateY(15%);
+    z-index: 2;
+    background-color: $blue-0;
+    h4 {
+        color: $blue-2;
+    }
+}
+
+.card.fls {
+    transform: translate(-32%, -20%);
+    rotate: 8deg;
+    background-color: $purple-0;
+    h4 {
+        color: $purple-2;
     }
 }
 
@@ -315,6 +397,7 @@ div#whoami-footer {
         text-align: center;
         margin: 0;
         font-weight: 600;
+        font-size: clamp(1rem, 2.25lvw, 1.5rem);
     }
 }
 
