@@ -15,7 +15,7 @@ html, body {
 body {
   height: 700lvh;
   width: 100lvw;
-  overflow-x: hidden;
+  overflow-x: clip;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
