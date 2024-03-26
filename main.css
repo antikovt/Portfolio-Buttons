@@ -433,7 +433,7 @@ div#whoami > div.content > .card > div:nth-child(2) > p {
   padding: 0 0 0 3lvw;
   color: #392420;
   font-weight: 700;
-  font-size: clamp(1rem, 2.25lvw, 1.5rem);
+  font-size: clamp(0.6rem, 2.4lvw, 0.9rem + 1lvw);
 }
 div#whoami > .stack {
   width: 100lvw;
@@ -461,8 +461,9 @@ div#whoami > .stack > .card {
           flex: 1;
   padding: 2lvw;
   border-radius: 5lvw;
-  min-height: 50%;
+  min-height: 40%;
   max-height: 80%;
+  max-width: 33.3lvw;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -477,7 +478,7 @@ div#whoami > .stack > .card .image-container {
 div#whoami > .stack > .card h4 {
   padding: 0 0 1.5lvw;
   margin: 0;
-  font-size: clamp(1.1rem, 2.8lvw, 1.7rem);
+  font-size: clamp(0.85rem, 2.8lvw, 0.78rem + 1lvw);
 }
 
 .card.game {
